@@ -2,10 +2,10 @@ import React from 'react'
 import { Nav, NavContainer } from './styles'
 
 interface NavBarProps {
-  children: any
+    children: React.ReactElement
 }
 
-export const NavBar = ({ children}: NavBarProps) => {
+export const NavBar = ({children}: NavBarProps) => {
   return(
     <Nav>
       <NavContainer>
