@@ -10,6 +10,8 @@ export const GlobalStyle = createGlobalStyle`
     --main-font: 'Roboto', sans-serif;
     --primary-color: hsla(74, 32%, 32%, 1);
     --secundary-color: hsla(0, 0%, 0%, 0.41);
+
+    font-family: var(--main-font) ;
   }
   
 `
