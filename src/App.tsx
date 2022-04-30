@@ -1,6 +1,6 @@
 import React from 'react';
+import Shop from './pages/shopcart/Shop';
 
-import Shop from './pages/shopcart/Shop'
 
 function App() {
   return (
