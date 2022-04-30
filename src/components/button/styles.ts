@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const ButtonStyles = styled.button<{width?: string, size?: string}>`
 background: #606C38;
 color: white;
-padding: 0.5rem ;;
+padding: 0.5rem ;
+font-family: var(--main-font);
+text-transform: uppercase;
 border-radius: 100px;
 border: 5px solid #606C38;
 font-weight: 700;
