@@ -11,3 +11,8 @@ border-radius: 50%;
 width: 50px;
 height: 50px;
 `
+
+export const AutocompleteStyles = styled.div`
+background: red;
+z-index: 1;
+`

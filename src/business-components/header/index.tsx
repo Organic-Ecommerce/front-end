@@ -1,3 +1,7 @@
+import { useEffect, useState } from "react"
+
+import { Box, Flex } from "rebass"
+
 import { Input } from "../../components/input"
 import { NavBar } from "../../components/nav-bar"
 
@@ -5,9 +9,7 @@ import Carrinho from '../../assets/images/Carrinho.png'
 import Logo from '../../assets/images/Logo.png'
 import test from '../../assets/images/test.png'
 
-import { Flex } from "rebass"
-import { CartStyles, PhotoStyles } from "./styles"
-import { useState } from "react"
+import { CartStyles, PhotoStyles, AutocompleteStyles } from "./styles"
 
 interface PhotoMenuProps {
   src?: string
@@ -42,19 +44,34 @@ const Menu = () => {
 export const Header = () => {
 
   const [element, setElement] = useState()
+  const [ filter, setFilter] =  useState<any>(null)
+  async function fetchMyAPI(element: any) {
+    let response = await fetch(`https://kitsu.io/api/edge/anime?filter[text]=${element}`)
+     response = await response.json()
+     setFilter(response)
+  }
 
-  console.log(element)
+ useEffect(() => {
+    if(element){
+      fetchMyAPI(element)
+    }
+  }, [element])
 
   return(
     <NavBar>
       <Menu/>
+      <Box>
       <Input 
         value={element} 
         onChange={(event: any) => setElement(event.target.value)} 
-        width="30%" 
+        width="100%" 
         border 
         placeholder='Procurar'
       />
+      <AutocompleteStyles>
+      {JSON.stringify(filter)}
+      </AutocompleteStyles>
+      </Box>
       <Flex style={{ gap: '4rem'}}>
         <Cart/>
         <PhotoMenu/>
@@ -62,3 +79,4 @@ export const Header = () => {
       </NavBar>
   )
 }
+
