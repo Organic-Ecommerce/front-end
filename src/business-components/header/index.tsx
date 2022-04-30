@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import { useEffect, useState } from "react"
 
@@ -6,12 +7,23 @@ import { Box, Flex } from "rebass"
 =======
 <<<<<<< HEAD
 >>>>>>> feat: create seach
+=======
+<<<<<<< HEAD
+>>>>>>> chore: update page shop
 import { Link } from 'react-router-dom';
 =======
 import { useEffect, useState } from "react"
 
 import { Box, Flex } from "rebass"
 >>>>>>> feat: create seach
+=======
+import { useEffect, useState } from "react"
+
+import { Box, Flex } from "rebass"
+=======
+import { Link } from 'react-router-dom';
+>>>>>>> chore: update page shop
+>>>>>>> chore: update page shop
 
 import { Input } from "../../components/input"
 import { NavBar } from "../../components/nav-bar"
@@ -71,6 +83,7 @@ export const Header = () => {
 >>>>>>> feat: create seach
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   return(
     <NavBar>
 <<<<<<< HEAD
@@ -79,6 +92,8 @@ export const Header = () => {
 =======
        <Link to='/'><Menu/></Link>
 =======
+=======
+>>>>>>> chore: update page shop
  useEffect(() => {
     if(element){
       fetchMyAPI(element)
@@ -89,8 +104,19 @@ export const Header = () => {
     <NavBar>
       <Menu/>
       <Box>
+<<<<<<< HEAD
 >>>>>>> feat: create seach
+<<<<<<< HEAD
 >>>>>>> feat: create seach
+=======
+=======
+=======
+  return(
+    <NavBar>
+       <Link to='/'><Menu/></Link>
+>>>>>>> chore: update page shop
+>>>>>>> chore: update page shop
+>>>>>>> chore: update page shop
       <Input 
         value={element} 
         onChange={(event: any) => setElement(event.target.value)} 
