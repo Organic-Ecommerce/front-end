@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 import { Box, Flex } from "rebass"
+import { Link } from 'react-router-dom';
 
 import { Input } from "../../components/input"
 import { NavBar } from "../../components/nav-bar"
@@ -42,7 +43,6 @@ const Menu = () => {
 }
 
 export const Header = () => {
-
   const [element, setElement] = useState()
   const [ filter, setFilter] =  useState<any>(null)
   async function fetchMyAPI(element: any) {
@@ -73,7 +73,7 @@ export const Header = () => {
       </AutocompleteStyles>
       </Box>
       <Flex style={{ gap: '4rem'}}>
-        <Cart/>
+        <Link to='/shop'><Cart/></Link>
         <PhotoMenu/>
       </Flex>
       </NavBar>
