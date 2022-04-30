@@ -1,6 +1,14 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+<<<<<<< HEAD
 import { useHistory, useParams } from "react-router-dom";
+=======
+<<<<<<< HEAD
+import { useParams } from "react-router-dom";
+=======
+import { useHistory, useParams } from "react-router-dom";
+>>>>>>> Create product and cart
+>>>>>>> Create product and cart
 import useLocalStorage from "react-use-localstorage";
 import { Flex } from "rebass";
 import Category from "../../../models/Category";
@@ -12,9 +20,19 @@ import { Input } from "../../input";
 import { Textarea } from "../../textarea";
 import { Title } from "../../title";
 
+<<<<<<< HEAD
 export const ProductRegister = () => {
     /**
      *    let history = useHistory();
+=======
+function ProductRegister() {
+
+<<<<<<< HEAD
+    
+=======
+    let history = useHistory();
+>>>>>>> Create product and cart
+>>>>>>> Create product and cart
     const { id } = useParams<{ id: string }>();
     const [categorys, setCategorys] = useState<Category[]>([])
     const userId = useSelector<UserState, UserState["id"]>(
@@ -25,6 +43,12 @@ export const ProductRegister = () => {
         (state) => state.tokens
     );
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+   
+=======
+>>>>>>> Create product and cart
     useEffect(() => {
         if (token == "") {
             alert("Você precisa estar logado")
@@ -32,6 +56,10 @@ export const ProductRegister = () => {
 
         }
     }, [token])
+<<<<<<< HEAD
+=======
+>>>>>>> Create product and cart
+>>>>>>> Create product and cart
 
     const [category, setCategory] = useState<Category>(
         {
@@ -120,6 +148,7 @@ export const ProductRegister = () => {
             })
             alert('Produtos cadastrada com sucesso');
         }
+<<<<<<< HEAD
         back()
 
     }
@@ -129,6 +158,23 @@ export const ProductRegister = () => {
     }
 
      */
+=======
+<<<<<<< HEAD
+        
+
+    }
+
+    
+=======
+        back()
+
+    }
+
+    function back() {
+        history.push('/product')
+    }
+>>>>>>> Create product and cart
+>>>>>>> Create product and cart
 
     return (
         <Flex justifyContent='center' >
