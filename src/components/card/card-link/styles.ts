@@ -7,6 +7,7 @@ export const ContainerCard = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 2.5rem;
 `
 
 export const TitleCard = styled.h1`
