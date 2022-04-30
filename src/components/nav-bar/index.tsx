@@ -2,7 +2,7 @@ import React from 'react'
 import { Nav, NavContainer } from './styles'
 
 interface NavBarProps {
-    children: React.ReactElement
+    children: any
 }
 
 export const NavBar = ({children}: NavBarProps) => {
