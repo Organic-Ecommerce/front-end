@@ -1,0 +1,11 @@
+{
+  "title": "Cebola Orgânica 500g",
+  "price": 6.20,
+  "description": "A Cebola é não só um dos temperos favoritos dos Brasileiros mas em todo o mundo, utilizada na alimentação desde tempos pré-históricos. Seu sabor e cheiro marcantes, dividem opiniões! Para os que separam pedacinho por pedacinho o vegetal para por de lado no prato, a ciência tem inúmeros argumentos que defendem sua importância para a saúde. A Cebola ajuda afinar o sangue, combater doenças respiratórias, controlar a hipertensão além de funções anti-inflamatórias e diuréticas (há pesquisas que tentam comprovar sua eficácia no combate à queda de cabelo!). Para um sabor menos intenso, a Cebola deve ser preparada cozida ou assada.",
+  "product_info": "Elas não gostam das batatas, não coloque as duas juntas já que emitem um gás que acelera o apodrecimento. Precisam de um lugar com ventilação, mas normalmente a sua dispensa faz o trabalho.Elas não gostam das batatas, não coloque as duas juntas já que emitem um gás que acelera o apodrecimento. Precisam de um lugar com ventilação, mas normalmente a sua dispensa faz o trabalho.",
+  "tags": ["Organic", "Horta Organic", "Legumes"],
+  "salesman" : {
+    "name" : "José Carlos de Almeida",
+    "service_time": 3
+  }
+}
