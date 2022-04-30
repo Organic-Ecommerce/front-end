@@ -7,7 +7,8 @@ align-items: center;
 `
 
 export const ContainerRadio = styled.div`
-margin: 2rem;
+margin: 0.5rem;
+margin-top: 1rem;
 display: flex;
 flex-direction: column;
 align-items: center;
