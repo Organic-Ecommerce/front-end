@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 import Category from "../../../models/Category";
 import Product from "../../../models/Product";
@@ -10,7 +10,7 @@ import { UserState } from "../../../store/tokens/tokensReducer";
 
 function ProductRegister() {
 
-    let history = useHistory();
+    
     const { id } = useParams<{ id: string }>();
     const [categorys, setCategorys] = useState<Category[]>([])
     const userId = useSelector<UserState, UserState["id"]>(
@@ -21,13 +21,7 @@ function ProductRegister() {
         (state) => state.tokens
     );
 
-    useEffect(() => {
-        if (token == "") {
-            alert("Você precisa estar logado")
-            history.push("/login")
-
-        }
-    }, [token])
+   
 
     const [category, setCategory] = useState<Category>(
         {
@@ -116,13 +110,11 @@ function ProductRegister() {
             })
             alert('Produtos cadastrada com sucesso');
         }
-        back()
+        
 
     }
 
-    function back() {
-        history.push('/product')
-    }
+    
 
     return (
         <div>ProductRegister</div>

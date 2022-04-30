@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
+/* import { useHistory } from 'react-router-dom' */
 import useLocalStorage from 'react-use-localstorage'
 import Product from '../../../models/Product'
 import { busca, buscaFree } from '../../../services/Service'
@@ -10,8 +10,8 @@ import { CardTeste } from './styled'
 
 function ProductList() {
     
-    let history = useHistory()
-    
+/*     let history = useHistory()
+ */    
     // const [product, setProduct] = useState<Product[]>([])
     // const [token, setToken] = useLocalStorage('token');
 
