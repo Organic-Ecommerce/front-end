@@ -1,20 +1,24 @@
 import React from 'react'
 import { ContainerCard, TitleCard, Text, ValueCard } from './styles'
-import test from '../../../assets/images/test.png'
 
-interface CardLinkProps {
+export interface CardLinkProps {
+  id?: number
   children?: any
+  title?: string
+  price?: number
+  username?: string
+  photo?: string
 }
-export const CardLink = ({ children }: CardLinkProps) => {
+export const CardLink = ({ children, title, price, username, photo }: CardLinkProps) => {
   return(
     <>
     <ContainerCard>
       <div>
-        <img src={test} alt="text" />
+        <img src={ photo } alt="text" />
       </div>
-      <TitleCard>Cenoura Organica 500 g</TitleCard>
-      <ValueCard>R$ 8,50</ValueCard>
-      <Text>Produto vendido por Jessica</Text>
+      <TitleCard>{ title }</TitleCard>
+      <ValueCard>R{'$'} { price }</ValueCard>
+      <Text>Produto vendido por { username }</Text>
         {children}
     </ContainerCard>
     </>
