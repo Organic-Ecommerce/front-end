@@ -1,6 +1,6 @@
 import React from 'react';
+import Shop from './pages/shopcart/Shop';
 
-<<<<<<< HEAD
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import { Home } from './pages/home'
@@ -16,25 +16,6 @@ function App() {
            <Route component ={ Shop } path="/shop" />
            <Route component ={ Product } path="/product" />
        </BrowserRouter>
-=======
-<<<<<<< HEAD
-import { Home } from './pages/home';
-
-function App() {
-  return (
-   <Home />
-=======
-import Shop from './pages/shopcart/Shop'
-
-function App() {
-  return (
-    <div className="App">
-      
-      <Shop />
-
-    </div>
->>>>>>> Create product and cart
->>>>>>> Create product and cart
   );
 }
 
