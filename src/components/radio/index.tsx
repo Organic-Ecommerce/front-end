@@ -2,14 +2,15 @@ import React, { InputHTMLAttributes } from 'react'
 import { Container, RadioStyles, Span } from "./styles"
 
 export interface InputRadioProps extends InputHTMLAttributes<HTMLInputElement>{
-text: string
+total?: number
 }
 
-export const InputRadio = ({ text, ...rest }: InputRadioProps) => {
+export const InputRadio = ({ total, ...rest }: InputRadioProps) => {
+  const item = 'itens'
   return(
     <Container>
       <RadioStyles type="radio" {...rest} />
-      <Span>{text}</Span>
+      <Span>{total} {item}</Span>
     </Container>
   )
 }
