@@ -1,9 +1,9 @@
 import React from "react";
-
+import test from '../../../assets/images/test.png'
 export const list = [
   {
     id:1,
-    photo: "linkdafoto",
+    photo: test,
     title: "Maçã",
     price: 2.50,
     vendedor: "Ana Vitoria",
@@ -12,7 +12,7 @@ export const list = [
 
   {
     id:2,
-    photo: "linkdafoto",
+    photo: test,
     title: "Xuxu",
     price: 4.50,
     vendedor: "Violeta Lala",
@@ -21,7 +21,7 @@ export const list = [
 
   {
     id:3,
-    photo: "linkdafoto",
+    photo: test,
     title: "Rabanete",
     price: 9.61,
     vendedor: "Sabrina Falcão",
@@ -36,7 +36,7 @@ export default list;
 
 export const item1 = {
   id:1,
-  photo: "linkdafoto",
+  photo: test,
   title: "Maçã",
   price: 2.50,
   vendedor: "Ana Vitoria",

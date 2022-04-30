@@ -14,11 +14,13 @@ import {
 
 import salesman_pic from '../../assets/images/salesman_pic.png'
 import product_pic from '../../assets/images/onion_pic.png'
+import { Header } from '../../business-components/header'
 
 
 export const ProductInfo = () => {
   return (
     <>
+      <Header/>
       <MainContainer>
         <NavBar >
           <h1>Olá mundo</h1>

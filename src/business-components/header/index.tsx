@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { Input } from "../../components/input"
 import { NavBar } from "../../components/nav-bar"
 
@@ -40,14 +42,11 @@ const Menu = () => {
 }
 
 export const Header = () => {
-
   const [element, setElement] = useState()
-
-  console.log(element)
 
   return(
     <NavBar>
-      <Menu/>
+       <Link to='/'><Menu/></Link>
       <Input 
         value={element} 
         onChange={(event: any) => setElement(event.target.value)} 
@@ -56,7 +55,7 @@ export const Header = () => {
         placeholder='Procurar'
       />
       <Flex style={{ gap: '4rem'}}>
-        <Cart/>
+        <Link to='/shop'><Cart/></Link>
         <PhotoMenu/>
       </Flex>
       </NavBar>
