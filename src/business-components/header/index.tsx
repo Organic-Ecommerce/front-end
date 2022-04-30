@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 
 import { useEffect, useState } from "react"
 
 import { Box, Flex } from "rebass"
+=======
+<<<<<<< HEAD
+>>>>>>> feat: create seach
 import { Link } from 'react-router-dom';
+=======
+import { useEffect, useState } from "react"
+
+import { Box, Flex } from "rebass"
+>>>>>>> feat: create seach
 
 import { Input } from "../../components/input"
 import { NavBar } from "../../components/nav-bar"
@@ -51,7 +60,25 @@ export const Header = () => {
      response = await response.json()
      setFilter(response)
   }
+<<<<<<< HEAD
 
+ useEffect(() => {
+    if(element){
+      fetchMyAPI(element)
+    }
+  }, [element])
+=======
+>>>>>>> feat: create seach
+
+<<<<<<< HEAD
+  return(
+    <NavBar>
+<<<<<<< HEAD
+      <Menu/>
+      <Box>
+=======
+       <Link to='/'><Menu/></Link>
+=======
  useEffect(() => {
     if(element){
       fetchMyAPI(element)
@@ -62,6 +89,8 @@ export const Header = () => {
     <NavBar>
       <Menu/>
       <Box>
+>>>>>>> feat: create seach
+>>>>>>> feat: create seach
       <Input 
         value={element} 
         onChange={(event: any) => setElement(event.target.value)} 
