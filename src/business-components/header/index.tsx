@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react"
 
 import { Text, Flex } from "rebass"
@@ -11,7 +10,8 @@ import Carrinho from '../../assets/images/Carrinho.png'
 import Logo from '../../assets/images/Logo.png'
 import test from '../../assets/images/test.png'
 
-import { BoxStyles, CartStyles, PhotoStyles, AutocompleteStyles } from "./styles"
+import { BoxStyles, CartStyles, PhotoStyles, AutocompleteStyles, CartCount } from "./styles"
+import { getItem } from "../../helpers/localStorage";
 
 interface PhotoMenuProps {
   src?: string
@@ -20,11 +20,12 @@ interface PhotoMenuProps {
 
 export const Header = () => {
 
-  const test = [ {name: 'vanessa'}]
+  const test = [{ name: 'vanessa' }]
 
   const [element, setElement] = useState()
-  const [ filter, setFilter] =  useState<any>(null)
+  const [filter, setFilter] = useState<any>(null)
   const [display, setDisplay] = useState<string>('none')
+  const [cartCount, setCartCount] = useState<number>(0)
 
   async function fetchMyAPI(element: any) {
     let response = await fetch(`https://organicecommerce.herokuapp.com/product`)
@@ -33,9 +34,15 @@ export const Header = () => {
      // {JSON.stringify(filter)}
   }
 
-console.log(filter)
- useEffect(() => {
-    if(element){
+  console.log(filter)
+  useEffect(() => { 
+    const cartList = getItem('cartList')
+    console.log(cartList)
+    cartList ? setCartCount(cartList.length) : setCartCount(0)
+  }, [])
+
+  useEffect(() => {
+    if (element) {
       fetchMyAPI(element)
     }
   }, [element])
@@ -66,15 +73,21 @@ console.log(filter)
         <Link to='/perfil'><PhotoMenu/></Link>
       </Flex>
       </NavBar>
-      </div>
+    </div>
   )
 }
 
-const Cart = () => {
-  return(
+interface CartProps {
+  cartItemsCount: number
+}
+const Cart = ({cartItemsCount}: CartProps) => {
+  return (
     <CartStyles>
       <img src={Carrinho} />
-      </CartStyles>
+      {
+        cartItemsCount > 0 && <CartCount>{cartItemsCount > 9 ? "+9" : cartItemsCount}</CartCount>
+      }
+    </CartStyles>
   )
 }
 
@@ -88,9 +101,9 @@ export const PhotoMenu = ({ src, size }: PhotoMenuProps) => {
 }
 
 const Menu = () => {
-  return(
+  return (
     <CartStyles>
-    <img src={Logo} />
+      <img src={Logo} />
     </CartStyles>
   )
 
