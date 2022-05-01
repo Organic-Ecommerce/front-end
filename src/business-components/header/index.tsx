@@ -33,7 +33,6 @@ export const Header = () => {
      // {JSON.stringify(filter)}
   }
 
-console.log(filter)
  useEffect(() => {
     if(element){
       fetchMyAPI(element)
@@ -62,7 +61,7 @@ console.log(filter)
       </AutocompleteStyles>
       </BoxStyles>
       <Flex style={{ gap: '4rem'}}>
-        <Link to='/shop'><Cart cartItemsCount={0}/></Link>
+        <Link to='/shop'><Cart/></Link>
         <Link to='/perfil'><PhotoMenu/></Link>
       </Flex>
       </NavBar>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import { setItem } from '../helpers/localStorage'
 
 export const api = axios.create({
     baseURL: 'https://organicecommerce.herokuapp.com/'
@@ -13,6 +14,8 @@ export const cadastroUsuario = async (url: any, dados: any, setDado: any) => {
 
 export const login = async (url: any, dados: any, setDado: any) => {
     const resposta = await api.post(url, dados)
+    const data = resposta.data.token
+    setItem('token', data)
     setDado(resposta.data)
 }
 
