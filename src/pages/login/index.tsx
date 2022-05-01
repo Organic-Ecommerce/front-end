@@ -1,6 +1,7 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 
 import { Box, Flex, Text } from 'rebass';
+import { useNavigate } from 'react-router-dom'
 
 import { Button } from '../../components/button'
 import { Input } from '../../components/input';
@@ -15,6 +16,8 @@ import BasicModal from '../register';
 
 
 export const Login = () => {
+
+	const location = useNavigate();
     const [token, setToken] = useState('token');
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
@@ -39,7 +42,8 @@ export const Login = () => {
 
         try {
             await login(`/username/login`, userLogin, setToken)
-            alert("Usuário logado com sucesso")
+           // alert("Usuário logado com sucesso")		
+						location('/home')				
 
         } catch (error) {
             alert("Dados do usuário inconsistentes")

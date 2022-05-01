@@ -43,7 +43,7 @@ console.log(filter)
   return(
     <div onClick={() => setDisplay('none')}> 
     <NavBar>
-    <Link to='/'><Menu/></Link>
+    <Link to='/home'><Menu/></Link>
       <BoxStyles >
       <Input
         onKeyUp={() => setDisplay('')} 
