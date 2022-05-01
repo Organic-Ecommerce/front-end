@@ -68,7 +68,7 @@ export const Header = () => {
       </AutocompleteStyles>
       </BoxStyles>
       <Flex style={{ gap: '4rem'}}>
-        <Link to='/shop'><Cart/></Link>
+        <Link to='/shop'><Cart cartItemsCount={0}/></Link>
         <Link to='/perfil'><PhotoMenu/></Link>
       </Flex>
       </NavBar>
