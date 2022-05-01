@@ -34,10 +34,9 @@ export const Header = () => {
      // {JSON.stringify(filter)}
   }
 
-  console.log(filter)
+
   useEffect(() => { 
     const cartList = getItem('cartList')
-    console.log(cartList)
     cartList ? setCartCount(cartList.length) : setCartCount(0)
   }, [])
 
