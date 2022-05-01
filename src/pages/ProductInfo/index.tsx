@@ -19,7 +19,6 @@ import { Header } from '../../business-components/header'
 
 
 export const ProductInfo = () => {
-
   return (
     <>
       <Header/>
