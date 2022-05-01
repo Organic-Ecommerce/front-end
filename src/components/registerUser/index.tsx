@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Button } from '../../components/button'
-import { useHistory } from 'react-router-dom';
+//import { useHistory } from 'react-router-dom';
 import { cadastroUsuario, login } from '../../services/Service';
 import User from '../../models/UserLogin';
 import { useDispatch } from 'react-redux';
@@ -12,19 +12,20 @@ import {  CardFunction, CardRegister, MainContainer } from './styles';
 
 export const Login = () => {
 
-    let history = useHistory()
+
+    const a = {
+        id: 0,
+        name: '',
+        username: '',
+        password: '',
+        photo: '',
+        about: ''
+    }
+
+   // let history = useHistory()
     const [token, setToken] = useState('token');
 
-    const [user, setUser] = useState<User>(
-        {
-            id: 0,
-            name: '',
-            username: '',
-            password: '',
-            photo: '',
-            about: ''
-        }
-    )
+    const [user, setUser] = useState<User>(a)
 
     // useEffect(() => {
     //     if(token !== ""){
@@ -53,7 +54,6 @@ export const Login = () => {
 
     return (
         <>
-
             <MainContainer>
                 <div>
                     <CardRegister>

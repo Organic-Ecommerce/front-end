@@ -1,17 +1,20 @@
 import React, { InputHTMLAttributes} from 'react'
-import { InputStyles, Div } from './styles'
+import { InputStyles, Div, Label } from './styles'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name?: any
   width?: string;
+  height?: string
   radius?: any
   border?: any
+  text?: string
 }
 
-export const Input = ({ name, width, radius, border, ...rest }: InputProps) => {
+export const Input = ({ name, width, radius, border, height, text, ...rest }: InputProps) => {
   return(
     <Div width={width}>
-       <InputStyles border={border} radius={radius} name={name} {...rest}/>
+      <Label>{text}</Label>
+       <InputStyles height={height} border={border} radius={radius} name={name} {...rest}/>
     </Div>
   )
 }
