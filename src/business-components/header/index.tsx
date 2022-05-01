@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react"
-import { Box, Flex } from "rebass"
 
+import { Text, Flex } from "rebass"
 import { Link } from 'react-router-dom';
 
 import { Input } from "../../components/input"
@@ -11,73 +11,87 @@ import Carrinho from '../../assets/images/Carrinho.png'
 import Logo from '../../assets/images/Logo.png'
 import test from '../../assets/images/test.png'
 
-import { CartStyles, PhotoStyles, AutocompleteStyles } from "./styles"
+import { BoxStyles, CartStyles, PhotoStyles, AutocompleteStyles } from "./styles"
 
 interface PhotoMenuProps {
   src?: string
 }
 
-const Cart = () => {
-  return (
-    <CartStyles>
-      <img src={Carrinho} />
-    </CartStyles>
-  )
-}
-
-const PhotoMenu = ({ src }: PhotoMenuProps) => {
-  return (
-    <CartStyles>
-      <PhotoStyles src={src ? src : test} />
-    </CartStyles>
-  )
-
-}
-
-const Menu = () => {
-  return (
-    <CartStyles>
-      <img src={Logo} />
-    </CartStyles>
-  )
-
-}
-
 export const Header = () => {
+
+  const test = [ {name: 'vanessa'}]
+
   const [element, setElement] = useState()
-  const [filter, setFilter] = useState<any>(null)
+  const [ filter, setFilter] =  useState<any>(null)
+  const [display, setDisplay] = useState<string>('none')
+
   async function fetchMyAPI(element: any) {
-    let response = await fetch(`https://kitsu.io/api/edge/anime?filter[text]=${element}`)
-    response = await response.json()
-    setFilter(response)
+    let response = await fetch(`https://organicecommerce.herokuapp.com`)
+     response = await response.json()
+     setFilter(response)
+     // {JSON.stringify(filter)}
   }
-  useEffect(() => {
-    if (element) {
+
+console.log(filter)
+ useEffect(() => {
+    if(element){
       fetchMyAPI(element)
     }
   }, [element])
 
-  return (
+  return(
+    <div onClick={() => setDisplay('none')}> 
     <NavBar>
-      <Box>
-       <Link to='/'><Menu/></Link>
-      <Input 
+      <Menu/>
+      <BoxStyles >
+      <Input
+        onKeyUp={() => setDisplay('')} 
         value={element} 
         onChange={(event: any) => setElement(event.target.value)} 
         width="100%" 
         border 
         placeholder="Procurar"
       />
-      <AutocompleteStyles>
-      {JSON.stringify(filter)}
+      <AutocompleteStyles display={display}>
+     <Flex flexDirection='column' m='1rem' >
+    {test.map((name)=> (
+      <Text fontSize='18px' mb='1rem'>{name.name}</Text>
+    ))}
+     </Flex>
       </AutocompleteStyles>
-      </Box>
+      </BoxStyles>
       <Flex style={{ gap: '4rem'}}>
         <Link to='/shop'><Cart/></Link>
         <PhotoMenu/>
       </Flex>
       </NavBar>
-      
+      </div>
   )
+}
+
+const Cart = () => {
+  return(
+    <CartStyles>
+      <img src={Carrinho} />
+      </CartStyles>
+  )
+}
+
+const PhotoMenu = ({ src }: PhotoMenuProps) => {
+  return(
+    <CartStyles>
+    <PhotoStyles src={src ? src : test} />
+    </CartStyles>
+  )
+
+}
+
+const Menu = () => {
+  return(
+    <CartStyles>
+    <img src={Logo} />
+    </CartStyles>
+  )
+
 }
 
