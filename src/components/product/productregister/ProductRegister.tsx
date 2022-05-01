@@ -15,7 +15,7 @@ import { Title } from "../../title";
 
 export const ProductRegister = () => {
 
-    const { id } = useParams<{ id: string }>();
+   /*  const { id } = useParams<{ id: string }>();
     const [categorys, setCategorys] = useState<Category[]>([])
     const userId = useSelector<UserState, UserState["id"]>(
         (state) => state.id
@@ -122,7 +122,7 @@ export const ProductRegister = () => {
 
      
         
-
+ */
 
 
     return (
