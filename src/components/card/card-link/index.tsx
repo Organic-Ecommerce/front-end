@@ -1,5 +1,4 @@
 import React from 'react'
-import {useNavigate} from 'react-router-dom'
 import { ContainerCard, TitleCard, Text, ValueCard } from './styles'
 
 export interface CardLinkProps {
@@ -8,24 +7,12 @@ export interface CardLinkProps {
   title?: string
   price?: number
   username?: string
-  photo?: string,
-  onClick?: any
+  photo?: string
 }
-export const CardLink = ({ children, id ,title, price, username, photo }: CardLinkProps) => {
-  
-  const navigate = useNavigate()
-  
-  const goToInfo = (e: number | undefined) => {
-    return e !== undefined ? navigate(`/produtos/${e}`) : ""
-  }
-
+export const CardLink = ({ children, title, price, username, photo }: CardLinkProps) => {
   return(
     <>
-    <ContainerCard onClick={(e) => {
-      e.stopPropagation()
-      e.preventDefault()
-      goToInfo(id)
-    }} >
+    <ContainerCard>
       <div>
         <img src={ photo } alt="text" />
       </div>

@@ -10,7 +10,7 @@ function App() {
   return (
       <Routes>
         <Route  element={<ProtectedRoute redirectTo='/'/>} >
-          <Route path='/produtos/:id' element={<ProductInfo />} />
+          <Route path='/produtos' element={<ProductInfo />} />
           <Route path='/shop' element={<Shop />} />
           <Route path='/teste' element={<Product />} />
           <Route path='/' element={<Login />} />
