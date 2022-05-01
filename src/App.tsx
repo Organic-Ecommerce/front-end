@@ -8,7 +8,6 @@ import { ProductInfo } from './pages/ProductInfo'
 import { Shop } from './pages/shop';
 import { Product } from './pages/product'
 
-
 function App() {
   return (
        <BrowserRouter>
@@ -20,4 +19,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
