@@ -4,10 +4,11 @@ import { TitleStyles } from './styles'
 interface TitleProps {
  children: any
  size?: string;
+ weight?: string
 }
 
-export const Title = ({ children, size, ...rest }: TitleProps) => {
+export const Title = ({ children, size, weight, ...rest }: TitleProps) => {
   return(
-    <><TitleStyles size={size} {...rest}>{ children }</TitleStyles></>
+    <><TitleStyles weight={weight} size={size} {...rest}>{ children }</TitleStyles></>
   )
 }
