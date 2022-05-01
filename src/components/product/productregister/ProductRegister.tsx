@@ -26,7 +26,6 @@ export const ProductRegister = () => {
     );
 
 
-
     const [category, setCategory] = useState<Category>(
         {
             id: 0,

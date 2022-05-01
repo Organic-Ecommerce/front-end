@@ -10,7 +10,6 @@ import { TitleCard, ValueCard } from '../../card/card-link/styles'
 import { CardTeste } from './styled'
 
 function ProductList() {
-
     // const [product, setProduct] = useState<Product[]>([])
     // const [token, setToken] = useLocalStorage('token');
 

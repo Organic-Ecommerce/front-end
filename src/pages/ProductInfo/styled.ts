@@ -7,7 +7,6 @@ export const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
   
-
   `
 export const SalesmanContainer = styled.section`
   width: 100%;
@@ -25,12 +24,10 @@ export const ProductContainer = styled.section`
   padding: 0 3rem;
   align-self: center;
   
-
   & > div {
     display: flex;
     flex-direction: column;
     padding: 2rem 0;
-
   }
   
 `
