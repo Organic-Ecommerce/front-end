@@ -19,17 +19,7 @@ export const Login = () => {
 
 	const location = useNavigate();
     const [token, setToken] = useState('token');
-    const [userLogin, setUserLogin] = useState<UserLogin>(
-        {
-            id: 0,
-            name: '',
-            username: '',
-            password: '',
-            photo: '',
-            about: '',
-            token: ''
-        }
-    )
+    const [userLogin, setUserLogin] = useState<any>([])
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
         setUserLogin({
             ...userLogin,
@@ -42,7 +32,6 @@ export const Login = () => {
 
         try {
             await login(`/username/login`, userLogin, setToken)
-           // alert("Usuário logado com sucesso")		
 						location('/home')				
 
         } catch (error) {
