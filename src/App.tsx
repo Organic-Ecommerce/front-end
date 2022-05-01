@@ -9,12 +9,12 @@ import { Login } from './pages/login/';
 function App() {
   return (
       <Routes>
-        <Route path='/' element={<Home />} />
         <Route  element={<ProtectedRoute redirectTo='/'/>} >
           <Route path='/produtos' element={<ProductInfo />} />
           <Route path='/shop' element={<Shop />} />
           <Route path='/teste' element={<Product />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/' element={<Login />} />
+          <Route path='/home' element={<Home />} />
         </Route>
       </Routes>
   );
