@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 /* import { useHistory } from 'react-router-dom' */
-import useLocalStorage from 'react-use-localstorage'
 import Product from '../../../models/Product'
 import { busca, buscaFree } from '../../../services/Service'
 import { UserState } from '../../../store/tokens/tokensReducer'
