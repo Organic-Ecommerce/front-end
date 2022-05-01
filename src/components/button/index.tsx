@@ -5,12 +5,17 @@ interface ButtonProps {
   children: string
   width?: string;
   size?: string;
+  onClick?: any;
 }
 
-export const Button = ( { children, width, size, ...rest }: ButtonProps) => {
+export const Button = ( { children, width, onClick , size, ...rest }: ButtonProps) => {
   return(
     <>
-      <ButtonStyles size={size} width={width} {...rest}>{children}</ButtonStyles>
+      <ButtonStyles onClick={(e) => {
+        e.stopPropagation()
+        e.preventDefault()
+        onClick()
+      }} size={size} width={width} {...rest}>{children}</ButtonStyles>
     </>
   )
 }
