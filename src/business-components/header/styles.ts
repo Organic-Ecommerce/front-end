@@ -24,8 +24,6 @@ display: ${ props => props.display ?? 'none' } ;
 `
 
 export const BoxStyles = styled.div`
-background: pink;
 position: relative;
-background: red;
 width: 40%;
 `

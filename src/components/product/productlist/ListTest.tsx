@@ -1,5 +1,4 @@
 import React from "react";
-
 import test from '../../../assets/images/test.png'
 export const list = [
   {

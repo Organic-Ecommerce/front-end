@@ -4,6 +4,7 @@ import { Home } from './pages/home'
 import { ProductInfo } from './pages/ProductInfo'
 import { Shop } from './pages/shop';
 import { Product } from './pages/product'
+import { Login } from './pages/login/';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
         <Route  element={<ProtectedRoute redirectTo='/'/>} >
           <Route path='/produtos' element={<ProductInfo />} />
           <Route path='/shop' element={<Shop />} />
-          <Route path='/perfil' element={<Product />} />
+          <Route path='/teste' element={<Product />} />
+          <Route path='/login' element={<Login />} />
         </Route>
       </Routes>
   );
