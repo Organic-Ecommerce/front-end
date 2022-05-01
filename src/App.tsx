@@ -1,8 +1,5 @@
 import React from 'react';
-
 import {Routes, Route, Outlet, Navigate} from 'react-router-dom'
-
-
 import { Home } from './pages/home'
 import { ProductInfo } from './pages/ProductInfo'
 import { Shop } from './pages/shop';

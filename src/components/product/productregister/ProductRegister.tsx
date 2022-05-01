@@ -1,15 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-<<<<<<< HEAD
-import { useHistory, useParams } from "react-router-dom";
-=======
-<<<<<<< HEAD
 import { useParams } from "react-router-dom";
-=======
-import { useHistory, useParams } from "react-router-dom";
->>>>>>> Create product and cart
->>>>>>> Create product and cart
-import useLocalStorage from "react-use-localstorage";
+
 import { Flex } from "rebass";
 import Category from "../../../models/Category";
 import Product from "../../../models/Product";
@@ -20,19 +12,9 @@ import { Input } from "../../input";
 import { Textarea } from "../../textarea";
 import { Title } from "../../title";
 
-<<<<<<< HEAD
-export const ProductRegister = () => {
-    /**
-     *    let history = useHistory();
-=======
-function ProductRegister() {
 
-<<<<<<< HEAD
-    
-=======
-    let history = useHistory();
->>>>>>> Create product and cart
->>>>>>> Create product and cart
+export const ProductRegister = () => {
+
     const { id } = useParams<{ id: string }>();
     const [categorys, setCategorys] = useState<Category[]>([])
     const userId = useSelector<UserState, UserState["id"]>(
@@ -43,23 +25,7 @@ function ProductRegister() {
         (state) => state.tokens
     );
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-   
-=======
->>>>>>> Create product and cart
-    useEffect(() => {
-        if (token == "") {
-            alert("Você precisa estar logado")
-            history.push("/login")
 
-        }
-    }, [token])
-<<<<<<< HEAD
-=======
->>>>>>> Create product and cart
->>>>>>> Create product and cart
 
     const [category, setCategory] = useState<Category>(
         {
@@ -148,33 +114,16 @@ function ProductRegister() {
             })
             alert('Produtos cadastrada com sucesso');
         }
-<<<<<<< HEAD
-        back()
+
 
     }
 
-    function back() {
-        history.push('/product')
-    }
+   
 
-     */
-=======
-<<<<<<< HEAD
+     
         
 
-    }
 
-    
-=======
-        back()
-
-    }
-
-    function back() {
-        history.push('/product')
-    }
->>>>>>> Create product and cart
->>>>>>> Create product and cart
 
     return (
         <Flex justifyContent='center' >
