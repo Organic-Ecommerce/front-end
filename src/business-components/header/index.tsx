@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react"
-
 import { Box, Flex } from "rebass"
+
 import { Link } from 'react-router-dom';
 
 import { Input } from "../../components/input"
@@ -18,26 +18,26 @@ interface PhotoMenuProps {
 }
 
 const Cart = () => {
-  return(
+  return (
     <CartStyles>
       <img src={Carrinho} />
-      </CartStyles>
+    </CartStyles>
   )
 }
 
 const PhotoMenu = ({ src }: PhotoMenuProps) => {
-  return(
+  return (
     <CartStyles>
-    <PhotoStyles src={src ? src : test} />
+      <PhotoStyles src={src ? src : test} />
     </CartStyles>
   )
 
 }
 
 const Menu = () => {
-  return(
+  return (
     <CartStyles>
-    <img src={Logo} />
+      <img src={Logo} />
     </CartStyles>
   )
 
@@ -45,29 +45,28 @@ const Menu = () => {
 
 export const Header = () => {
   const [element, setElement] = useState()
-  const [ filter, setFilter] =  useState<any>(null)
+  const [filter, setFilter] = useState<any>(null)
   async function fetchMyAPI(element: any) {
     let response = await fetch(`https://kitsu.io/api/edge/anime?filter[text]=${element}`)
-     response = await response.json()
-     setFilter(response)
+    response = await response.json()
+    setFilter(response)
   }
-
- useEffect(() => {
-    if(element){
+  useEffect(() => {
+    if (element) {
       fetchMyAPI(element)
     }
   }, [element])
 
-  return(
+  return (
     <NavBar>
-      <Menu/>
       <Box>
+       <Link to='/'><Menu/></Link>
       <Input 
         value={element} 
         onChange={(event: any) => setElement(event.target.value)} 
         width="100%" 
         border 
-        placeholder='Procurar'
+        placeholder="Procurar"
       />
       <AutocompleteStyles>
       {JSON.stringify(filter)}
@@ -78,6 +77,7 @@ export const Header = () => {
         <PhotoMenu/>
       </Flex>
       </NavBar>
+      
   )
 }
 

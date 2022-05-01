@@ -1,4 +1,5 @@
 import React from "react";
+
 import test from '../../../assets/images/test.png'
 export const list = [
   {
@@ -29,16 +30,3 @@ export const list = [
   },
 
 ]
-
-
-export default list;
-
-
-export const item1 = {
-  id:1,
-  photo: test,
-  title: "Maçã",
-  price: 2.50,
-  vendedor: "Ana Vitoria",
-  unid: 1,
-}
