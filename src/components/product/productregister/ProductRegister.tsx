@@ -2,15 +2,19 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
+import { Flex } from "rebass";
 import Category from "../../../models/Category";
 import Product from "../../../models/Product";
 import Username from "../../../models/User";
 import { busca, buscaId, post, put } from "../../../services/Service";
 import { UserState } from "../../../store/tokens/tokensReducer";
+import { Input } from "../../input";
+import { Textarea } from "../../textarea";
+import { Title } from "../../title";
 
-function ProductRegister() {
-
-    let history = useHistory();
+export const ProductRegister = () => {
+    /**
+     *    let history = useHistory();
     const { id } = useParams<{ id: string }>();
     const [categorys, setCategorys] = useState<Category[]>([])
     const userId = useSelector<UserState, UserState["id"]>(
@@ -124,9 +128,24 @@ function ProductRegister() {
         history.push('/product')
     }
 
+     */
+
     return (
-        <div>ProductRegister</div>
+        <Flex justifyContent='center' >
+        <Flex width='80%' justifyContent='space-between'>
+        <Flex flexDirection='column'>
+            <Title size="20px">Meu Perfil</Title>
+            <Title size="20px">Meus Pedidos</Title>
+            <Title size="20px">Cadastrar Produtos</Title>
+            <Title size="20px">Meus Produtos Cadastrados</Title>
+        </Flex>
+        <Flex height='400px' justifyContent='space-around' width='30%' flexDirection='column'>
+            <Input placeholder="Nome do produto" />
+            <Input placeholder="Valor R$" />
+            <Textarea placeholder="Descrição do produto"></Textarea>
+            <Textarea placeholder="Como guardar " ></Textarea>
+        </Flex>
+        </Flex>
+        </Flex>
     )
 }
-
-export default ProductRegister
