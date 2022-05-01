@@ -2,7 +2,8 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
-import { Flex } from "rebass";
+import { Box, Flex } from "rebass";
+import { PhotoMenu } from "../../../business-components/header";
 import Category from "../../../models/Category";
 import Product from "../../../models/Product";
 import Username from "../../../models/User";
@@ -128,13 +129,20 @@ export const ProductRegister = () => {
     return (
         <Flex justifyContent='center' >
         <Flex width='80%' justifyContent='space-between'>
-        <Flex flexDirection='column'>
+        <Flex style={{ gap:'1rem' }} flexDirection='column' alignItems='flex-start'>
+            <Flex style={{ gap: '1rem' }} mb='3rem' alignItems='center'>
+            <PhotoMenu size="120px"/>
+            <Title size="24px">Olá, Fernando Torres</Title>
+            </Flex>
             <Title size="20px">Meu Perfil</Title>
             <Title size="20px">Meus Pedidos</Title>
             <Title size="20px">Cadastrar Produtos</Title>
             <Title size="20px">Meus Produtos Cadastrados</Title>
         </Flex>
         <Flex height='400px' justifyContent='space-around' width='30%' flexDirection='column'>
+            <Box textAlign='center'>
+            <Title size="24px">Cadastrar Produto</Title>
+            </Box>
             <Input placeholder="Nome do produto" />
             <Input placeholder="Valor R$" />
             <Textarea placeholder="Descrição do produto"></Textarea>

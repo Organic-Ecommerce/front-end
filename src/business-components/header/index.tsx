@@ -15,6 +15,7 @@ import { BoxStyles, CartStyles, PhotoStyles, AutocompleteStyles } from "./styles
 
 interface PhotoMenuProps {
   src?: string
+  size?:string ;
 }
 
 export const Header = () => {
@@ -26,7 +27,7 @@ export const Header = () => {
   const [display, setDisplay] = useState<string>('none')
 
   async function fetchMyAPI(element: any) {
-    let response = await fetch(`https://organicecommerce.herokuapp.com`)
+    let response = await fetch(`https://organicecommerce.herokuapp.com/product`)
      response = await response.json()
      setFilter(response)
      // {JSON.stringify(filter)}
@@ -42,7 +43,7 @@ console.log(filter)
   return(
     <div onClick={() => setDisplay('none')}> 
     <NavBar>
-      <Menu/>
+    <Link to='/'><Menu/></Link>
       <BoxStyles >
       <Input
         onKeyUp={() => setDisplay('')} 
@@ -62,7 +63,7 @@ console.log(filter)
       </BoxStyles>
       <Flex style={{ gap: '4rem'}}>
         <Link to='/shop'><Cart/></Link>
-        <PhotoMenu/>
+        <Link to='/perfil'><PhotoMenu/></Link>
       </Flex>
       </NavBar>
       </div>
@@ -77,10 +78,10 @@ const Cart = () => {
   )
 }
 
-const PhotoMenu = ({ src }: PhotoMenuProps) => {
+export const PhotoMenu = ({ src, size }: PhotoMenuProps) => {
   return(
     <CartStyles>
-    <PhotoStyles src={src ? src : test} />
+    <PhotoStyles width={size} height={size}  src={src ? src : test} />
     </CartStyles>
   )
 

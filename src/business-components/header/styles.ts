@@ -8,8 +8,8 @@ cursor: pointer;
 
 export const PhotoStyles = styled.img`
 border-radius: 50%;
-width: 50px;
-height: 50px;
+width: ${ props => props.width?? '50px' };
+height: ${ props => props.height ?? '50px' };
 `
 
 export const AutocompleteStyles = styled.div<{display?: string}>`
