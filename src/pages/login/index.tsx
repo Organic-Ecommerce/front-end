@@ -16,7 +16,6 @@ import BasicModal from '../register';
 
 
 export const Login = () => {
-
 	const location = useNavigate();
     const [token, setToken] = useState('token');
     const [userLogin, setUserLogin] = useState<any>([])

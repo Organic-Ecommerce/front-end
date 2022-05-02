@@ -1,6 +1,6 @@
 import { ArrayProps, FilterListProps } from "../../business-components/filter"
 import test from '../../assets/images/test.png'
-export const array: FilterListProps[] = [
+export const array = [
   {
     id: 1,
     category: "Frutas",

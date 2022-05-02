@@ -4,6 +4,7 @@ export const CartStyles = styled.button`
 background-color: transparent;
 border: none;
 cursor: pointer;
+position: relative;
 `
 
 export const PhotoStyles = styled.img`
@@ -26,4 +27,21 @@ display: ${ props => props.display ?? 'none' } ;
 export const BoxStyles = styled.div`
 position: relative;
 width: 40%;
+`
+
+export const CartCount = styled.span`
+  width: 1.2rem;
+  height: 1.2rem;
+  padding: .2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  right: -5px;
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  font-size: .9rem;
+  font-weight: bold;
 `

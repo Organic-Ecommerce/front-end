@@ -2,7 +2,6 @@ import React from 'react'
 import { NavBar } from "../../components/nav-bar"
 import { Button } from '../../components/button'
 import info from './mock.json'
-
 import {
   MainContainer,
   SalesmanContainer,
@@ -23,9 +22,6 @@ export const ProductInfo = () => {
     <>
       <Header/>
       <MainContainer>
-        <NavBar >
-          <h1>Olá mundo</h1>
-        </NavBar>
         <SalesmanContainer>
           <img src={salesman_pic} />
           <div>
