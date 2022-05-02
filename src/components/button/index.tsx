@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 import { ButtonStyles } from './styles'
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: string
   width?: string;
   size?: string;
@@ -10,7 +10,8 @@ interface ButtonProps {
 export const Button = ( { children, width, size, ...rest }: ButtonProps) => {
   return(
     <>
-      <ButtonStyles size={size} width={width} {...rest}>{children}</ButtonStyles>
+      <ButtonStyles
+       size={size} width={width} {...rest}>{children}</ButtonStyles>
     </>
   )
 }

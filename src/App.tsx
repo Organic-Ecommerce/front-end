@@ -5,15 +5,16 @@ import { ProductInfo } from './pages/ProductInfo'
 import { Shop } from './pages/shop';
 import { Product } from './pages/product'
 import { Login } from './pages/login/';
+import { getItem } from './helpers/localStorage';
 
 function App() {
   return (
       <Routes>
-        <Route  element={<ProtectedRoute redirectTo='/'/>} >
-          <Route path='/produtos' element={<ProductInfo />} />
+        <Route path='/' element={<Login />} />
+        <Route  element={<ProtectedRoute redirectTo='/'/>}>
+          <Route path='/produtos/:id' element={<ProductInfo />} />
           <Route path='/shop' element={<Shop />} />
-          <Route path='/teste' element={<Product />} />
-          <Route path='/' element={<Login />} />
+          <Route path='/perfil' element={<Product />} />
           <Route path='/home' element={<Home />} />
         </Route>
       </Routes>
@@ -25,7 +26,7 @@ interface ProtectedRouteProps {
 }
 
 function ProtectedRoute({redirectTo}: ProtectedRouteProps) {
-  const authorization = true
+  const authorization = getItem('token')
   return authorization ? <Outlet /> : <Navigate to={redirectTo} />
 }
 

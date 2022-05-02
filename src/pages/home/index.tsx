@@ -10,6 +10,7 @@ import { getItem } from '../../helpers/localStorage'
 
 export const Home = () => {
   const [ list, setList ] = useState([])
+  const [ listt, setListt ] = useState([])
 
   async function onSubmit(){
 
@@ -23,15 +24,34 @@ export const Home = () => {
     }
 }
 
+async function onSubmi(){
+
+  try {
+      await busca('/category', setListt, {headers: {
+              'Authorization': getItem('token')
+          }} )				
+
+  } catch (error) {
+     
+  }
+}
+
+
+
   useEffect(() => {
     onSubmit()
+    onSubmi()
+    
   },[])
-  
+ 
   return(
     <>
     <Header/>
-    <FilterList array={array} />
-    <SalesMenu array={product} />
+    <FilterList array={listt} />
+    <SalesMenu array={ list.map((item : any) => {
+      const { category, ...rest } = item 
+      return rest
+   })} />
    </>
   )
 }

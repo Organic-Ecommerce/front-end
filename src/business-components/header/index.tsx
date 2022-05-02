@@ -11,7 +11,8 @@ import Carrinho from '../../assets/images/Carrinho.png'
 import Logo from '../../assets/images/Logo.png'
 import test from '../../assets/images/test.png'
 
-import { BoxStyles, CartStyles, PhotoStyles, AutocompleteStyles } from "./styles"
+import { BoxStyles, CartStyles, PhotoStyles, AutocompleteStyles, CartCount } from "./styles"
+import { getItem } from "../../helpers/localStorage";
 
 interface PhotoMenuProps {
   src?: string
@@ -25,13 +26,18 @@ export const Header = () => {
   const [element, setElement] = useState()
   const [ filter, setFilter] =  useState<any>(null)
   const [display, setDisplay] = useState<string>('none')
-
+  const [cartCount, setCartCount] = useState<number>(0)
   async function fetchMyAPI(element: any) {
     let response = await fetch(`https://organicecommerce.herokuapp.com/product`)
      response = await response.json()
      setFilter(response)
      // {JSON.stringify(filter)}
   }
+
+  useEffect(() => { 
+    const cartList = getItem('cartList')
+    cartList ? setCartCount(cartList.length) : setCartCount(0)
+  }, [])
 
  useEffect(() => {
     if(element){
@@ -61,18 +67,24 @@ export const Header = () => {
       </AutocompleteStyles>
       </BoxStyles>
       <Flex style={{ gap: '4rem'}}>
-        <Link to='/shop'><Cart/></Link>
+        <Link to='/shop'><Cart cartItemsCount={cartCount}/></Link>
         <Link to='/perfil'><PhotoMenu/></Link>
       </Flex>
       </NavBar>
       </div>
   )
 }
+interface CartProps {
+  cartItemsCount: number
+}
 
-const Cart = () => {
+const Cart = ({cartItemsCount}: CartProps) => {
   return(
     <CartStyles>
       <img src={Carrinho} />
+      {
+        cartItemsCount > 0 && <CartCount>{cartItemsCount > 9 ? "+9" : cartItemsCount}</CartCount>
+      }
       </CartStyles>
   )
 }

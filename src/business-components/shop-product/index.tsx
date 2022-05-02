@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Box, Flex } from 'rebass'
 import styled from 'styled-components'
 import { Header } from '../../business-components/header'
-import { CardLink } from '../../components/card/card-link'
+import { CardLink, UserName } from '../../components/card/card-link'
 import { Title } from '../../components/title'
 
 import Delete from '../../assets/images/Delete.png'
@@ -13,7 +13,7 @@ export interface CardCartProps {
   id?: number
   title?: string
   price?: number
-  username?: string
+  username?: UserName
   photo?: string
   unids?: any
 }
